@@ -10,6 +10,14 @@ merge_protections:
     success_conditions:
       - "#approved-reviews-by >= 1"
 
+  - name: docs owner approval
+    if:
+      - base = main
+      - author = testbuyer94-collab
+      - files ~= ^docs/canary\.md$
+    success_conditions:
+      - "#approved-reviews-by >= 1"
+
 pull_request_rules:
   - name: docs canary
     conditions:

@@ -16,7 +16,8 @@ pull_request_rules:
       - base = main
       - author = testbuyer94-collab
       - label = ready-e7800e
-      - files ~= ^docs/
+      - files ~= ^docs/canary\.md$
+      - "#files = 1"
       - -mergify-configuration-changed
     actions:
       merge:

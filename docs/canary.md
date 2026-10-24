@@ -1,1 +1,1 @@
-harmless docs canary
+harmless docs canary, owner-approved revision

@@ -25,20 +25,6 @@ queue_rules:
       - -mergify-configuration-changed
     merge_method: merge
 
-  - name: protected-queue
-    branch_protection_injection_mode: none
-    merge_bot_account: 56dluffy2
-    queue_conditions:
-      - base = main
-      - author = testbuyer94-collab
-      - label = ready-e7800e
-      - files ~= ^src/protected\.txt$
-      - "#files = 1"
-      - -mergify-configuration-changed
-    merge_conditions:
-      - -mergify-configuration-changed
-    merge_method: merge
-
 pull_request_rules:
   - name: docs canary
     conditions:
@@ -51,15 +37,3 @@ pull_request_rules:
     actions:
       queue:
         name: docs-queue
-
-  - name: protected canary
-    conditions:
-      - base = main
-      - author = testbuyer94-collab
-      - label = ready-e7800e
-      - files ~= ^src/protected\.txt$
-      - "#files = 1"
-      - -mergify-configuration-changed
-    actions:
-      queue:
-        name: protected-queue

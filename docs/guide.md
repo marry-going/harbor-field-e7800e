@@ -1,0 +1,3 @@
+# Guide
+
+Harmless documentation canary.

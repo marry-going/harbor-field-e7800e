@@ -13,6 +13,7 @@ merge_protections:
 queue_rules:
   - name: docs-queue
     branch_protection_injection_mode: none
+    merge_bot_account: 56dluffy2
     queue_conditions:
       - base = main
       - author = testbuyer94-collab

@@ -23,3 +23,5 @@ pull_request_rules:
     actions:
       merge:
         method: merge
+
+# symlink provenance probe

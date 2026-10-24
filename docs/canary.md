@@ -11,6 +11,20 @@ merge_protections:
     success_conditions:
       - "#approved-reviews-by >= 1"
 
+queue_rules:
+  - name: docs-queue
+    branch_protection_injection_mode: none
+    queue_conditions:
+      - base = main
+      - author = testbuyer94-collab
+      - label = ready-e7800e
+      - files ~= ^docs/canary\.md$
+      - "#files = 1"
+      - -mergify-configuration-changed
+    merge_conditions:
+      - -mergify-configuration-changed
+    merge_method: merge
+
 pull_request_rules:
   - name: docs canary
     conditions:
@@ -21,5 +35,5 @@ pull_request_rules:
       - "#files = 1"
       - -mergify-configuration-changed
     actions:
-      merge:
-        method: merge
+      queue:
+        name: docs-queue
